@@ -1,6 +1,6 @@
-# listeler2
+# liste ve navigator islemleri
 
-A new Flutter project.
+
 
 ## Getting Started
 
