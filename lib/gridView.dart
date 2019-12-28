@@ -30,7 +30,7 @@ class GridViewOrnek extends StatelessWidget {
                  image: AssetImage("assets/images/devfest.jpg"),
                  fit: BoxFit.contain,
                  alignment:Alignment.topCenter
-
+                  
                ),
                border: Border.all(
                  color: Colors.deepOrange,
