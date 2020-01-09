@@ -15,8 +15,10 @@ class GridViewOrnek extends StatelessWidget {
             child: Text(
               "Merhaba Flutter $index",
               textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12),
             ),
             alignment: Alignment.center,
+            
            
             decoration: BoxDecoration(
               /*gradient: LinearGradient(

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as matematik;
 
@@ -33,6 +34,8 @@ class CustomScroll extends StatelessWidget {
             sabitListeElemani(context),
           ),
         ),
+
+       
 
         SliverGrid(
           gridDelegate:
