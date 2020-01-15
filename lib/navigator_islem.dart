@@ -73,6 +73,14 @@ class NavigasyonIslemleri extends StatelessWidget {
               debugPrint("e sayfası calıştı");
             },
           ),
+
+           RaisedButton(
+             color: Colors.orange,
+            child: Text("Form İşlemlerine Git"),
+            onPressed: () {
+              Navigator.pushNamed(context, "/formSayfasi");
+            },
+          ),
           RaisedButton(
             child: Text("Listeler Sayfasına Git"),
             onPressed: () => {

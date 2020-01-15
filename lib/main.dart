@@ -1,7 +1,10 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
 import 'package:listeler2/navigator_islem.dart';
 import 'custom_scrolls_sliver.dart';
+import 'form_islem.dart';
 import 'listeler.dart';
 import 'gridView.dart';
 import 'etkinListeOrnek.dart';
@@ -13,6 +16,9 @@ main(List<String> args) {
     //örnek  :  "/CPage/GPage/FPage" ilk fpage yi açar geri tuşuna basıldıkça arkadaki zincirdeki sayfaları çalıştırır.
     // tanumlaması : "/CPage/GPage/FPage" : (context)=> FSayfasi(),
     //-----
+
+     initialRoute: '/formSayfasi',
+    
     routes: { // route işlemleri ile string karakterlere atadığımız değerleri sayflar arası geçişlerde kullanabiliriz.
      
       '/'      :(context)=> NavigasyonIslemleri(),
@@ -22,6 +28,7 @@ main(List<String> args) {
       '/DPage' :(context)=>DSayfasi(),
       '/EPage' :(context)=>ESayfasi(),
       '/FPage' :(context)=>FSayfasi(),
+      '/formSayfasi' : (context)=> FormIslem(),
      // '/GPage' :(context)=>GSayfasi(),
       '/ListeSayfasi': (context)=>ListeSinifi(),
     },
@@ -39,6 +46,7 @@ main(List<String> args) {
 
 
       },
+     
       onUnknownRoute: (RouteSettings settings) => MaterialPageRoute(builder:(context)=>HataSayfasi()),
     
     debugShowCheckedModeBanner: false,
