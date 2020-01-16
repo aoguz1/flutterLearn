@@ -9,43 +9,41 @@ class FormIslem extends StatefulWidget {
 
 class _FormIslemState extends State<FormIslem> {
   String geleninputdeger = "";
-  int sayi1 =0 ;
-  int sayi2 =0;
-  int toplam=0;
+  int sayi1 = 0;
+  int sayi2 = 0;
+  int toplam = 0;
   int maxLines = 1;
-  FocusNode _fnode;
+  FocusNode
+      _fnode; // focus olma durumunu tetikleyeceğimiz ve focus olma durumunu yönlendirebileceğimiz değişken
 
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
+    super
+        .initState(); // initstate uygulama açıldığında consructordan sonra çalışan bir method
     _fnode = FocusNode();
     _fnode.addListener(() {
+      // initstate normlade uygulama açıldıktan sonra 1 kez çalışır ama addListener() methodu ile olan _fnode tetiklenmesini devamlı dinleyerek içerisinde yazdığımız komuta uygun reaksiyonlar verir.
       setState(() {
         if (_fnode.hasFocus) {
+          // _fnode'nin focus olma durumu
           maxLines = 3;
         } else {
           maxLines = 1;
         }
       });
     });
-
-    
   }
 
   @override
   void dispose() {
+    // dispose ise uygulama kapandıktan sonra çalışan method
     //_fnode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-
-    setState(() {
-      return toplam =sayi1+sayi2;
-      
-    });
     return Scaffold(
         appBar: AppBar(
           title: Text("Form İşlemleri"),
@@ -66,14 +64,14 @@ class _FormIslemState extends State<FormIslem> {
                 textInputAction: TextInputAction.done,
                 maxLines: maxLines, // satır yüksekliğini temsil eder
                 maxLength: 7, // max girilecek değeri gösterir
-                focusNode: _fnode,
+                focusNode:
+                    _fnode, //focus olma durumunu tetikleyeceğimiz ve focus olma durumunu yönlendirebileceğimiz değişken
                 onSubmitted: (String s) {
                   debugPrint(s);
 
                   setState(() {
                     geleninputdeger = s;
                   });
-                  
                 },
 
                 decoration: InputDecoration(
@@ -108,8 +106,10 @@ class _FormIslemState extends State<FormIslem> {
                 },
 
                 decoration: InputDecoration(
-                  hintText: "Girmek istediğiniz metni yazınız",
-                  labelText: "Başlık",
+                  hintText:
+                      "Girmek istediğiniz metni yazınız", // inputa bilgilendirici bir metin yazar.
+                  labelText:
+                      "Başlık", // inputa tıklanmadan önce bilgilendirici bir metin yazar.
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(
                           8))), // girilmek istenen inputun çerçevesine border koyarak daha etkileşimli bir hale getirir.
@@ -125,7 +125,7 @@ class _FormIslemState extends State<FormIslem> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 8,horizontal: 0),
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 0),
               child: Align(
                 alignment: Alignment.center,
                 child: Text(geleninputdeger),
@@ -134,22 +134,18 @@ class _FormIslemState extends State<FormIslem> {
               height: 200,
               color: Colors.teal,
             ),
-
-
             Container(
-
               width: double.infinity,
               height: 50,
-              color:Colors.orange,
-            alignment: Alignment.center,
-            child: Text("Toplam Hesaplama",
-            style: TextStyle(color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.w800
-            
-            ),
-            ),
-
+              color: Colors.orange,
+              alignment: Alignment.center,
+              child: Text(
+                "Toplam Hesaplama",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w800),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
@@ -158,21 +154,17 @@ class _FormIslemState extends State<FormIslem> {
                 autofocus: false,
                 maxLength: 30,
                 maxLines: 1,
-                
                 onSubmitted: (s) {
-                   sayi1 =int.parse(s);
+                  sayi1 = int.parse(s);
                   debugPrint("sayi 1 degeri : $sayi1");
                 },
                 decoration: InputDecoration(
-                  labelText: "Birinci Sayiyi giriniz",
+                    labelText: "Birinci Sayiyi giriniz",
                     prefixIcon: Icon(Icons.arrow_forward_ios),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8)))),
               ),
             ),
-
-            
-
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextField(
@@ -181,16 +173,16 @@ class _FormIslemState extends State<FormIslem> {
                 maxLength: 30,
                 maxLines: 1,
                 onSubmitted: (k) {
-                  sayi2 =int.parse(k);
+                  sayi2 = int.parse(k);
                   debugPrint("sayi 2 degeri : $sayi2");
-                  debugPrint("${sayi1+sayi2}");
+                  debugPrint("${sayi1 + sayi2}");
 
                   setState(() {
-                    toplam=sayi2+sayi1;
+                    toplam = sayi2 + sayi1;
                   });
                 },
                 decoration: InputDecoration(
-                  labelText: "İkinci sayiyi giriniz",
+                    labelText: "İkinci sayiyi giriniz",
                     prefixIcon: Icon(Icons.arrow_forward_ios),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8)))),
@@ -212,29 +204,12 @@ class _FormIslemState extends State<FormIslem> {
                     ),
                     width: double.infinity,
                     height: 40,
-
                     child: Text("$toplam"),
-                   
                   ),
                 ),
-                /* RaisedButton(child: Text("islemi yap "),
-                onPressed: (){
-                  setState(() {
-                      toplam=sayi2+sayi1;
-                  });
-                },)
- */
-
               ],
             )
           ],
         ));
   }
 }
-
-/*Container(
-        width: double.infinity, // ekran genişliğinin tamamını kaplar.
-        height: MediaQuery.of(context).size.height/3, //MediaQuery.of(context).size.height ibaresi ekran yüksekliğinin tamamını kapsar
-        color: Colors.teal,
-      ),
-      */
