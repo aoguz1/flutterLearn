@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class FormIslem extends StatefulWidget {
   FormIslem({Key key}) : super(key: key);
-
   @override
   _FormIslemState createState() => _FormIslemState();
 }
@@ -13,6 +12,8 @@ class _FormIslemState extends State<FormIslem> {
   int sayi2 = 0;
   int toplam = 0;
   int maxLines = 1;
+  TextEditingController controller1;
+
   FocusNode
       _fnode; // focus olma durumunu tetikleyeceğimiz ve focus olma durumunu yönlendirebileceğimiz değişken
 
@@ -22,6 +23,7 @@ class _FormIslemState extends State<FormIslem> {
     super
         .initState(); // initstate uygulama açıldığında consructordan sonra çalışan bir method
     _fnode = FocusNode();
+    controller1 = TextEditingController(text: "deneme");
     _fnode.addListener(() {
       // initstate normlade uygulama açıldıktan sonra 1 kez çalışır ama addListener() methodu ile olan _fnode tetiklenmesini devamlı dinleyerek içerisinde yazdığımız komuta uygun reaksiyonlar verir.
       setState(() {
@@ -38,7 +40,8 @@ class _FormIslemState extends State<FormIslem> {
   @override
   void dispose() {
     // dispose ise uygulama kapandıktan sonra çalışan method
-    //_fnode.dispose();
+    _fnode.dispose();
+    controller1.dispose();
     super.dispose();
   }
 
@@ -48,18 +51,58 @@ class _FormIslemState extends State<FormIslem> {
         appBar: AppBar(
           title: Text("Form İşlemleri"),
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+
+            Container(
+              width: 30,
+              height: 30,
+             child:  FloatingActionButton(
+          onPressed: () {
+          controller1.text="en üste floatingActionButtonaBasildi";
+          },
+          backgroundColor: Colors.teal,
+          child: Icon(Icons.arrow_upward, size: 18,),
+          
+        ),
+            ),
+
+
+
+             FloatingActionButton(
+          onPressed: () {
+            debugPrint(controller1.text);
+          },
+          child: Icon(Icons.arrow_upward),
+          backgroundColor: Colors.indigo,
+          mini: true,
+        ),
+          SizedBox(height: 10,),
+
+            FloatingActionButton(
           onPressed: () {
             FocusScope.of(context).requestFocus(_fnode);
           },
+
           child: Icon(Icons.add),
         ),
+
+
+
+          ],
+        ),
+
+          
+
+
         body: ListView(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(14.0),
               child: TextField(
                 autofocus: false,
+                controller: controller1,
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
                 maxLines: maxLines, // satır yüksekliğini temsil eder
@@ -73,7 +116,6 @@ class _FormIslemState extends State<FormIslem> {
                     geleninputdeger = s;
                   });
                 },
-
                 decoration: InputDecoration(
                   hintText: "Girmek istediğiniz metni yazınız",
                   labelText: "Başlık",
