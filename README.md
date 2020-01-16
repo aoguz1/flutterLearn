@@ -1,4 +1,6 @@
-# liste ve navigator islemleri
+# flutterLearn 
+
+Flutter öğrenirken yaptığım örnekler ve alıştırmaları bu repository altında topluyorum
 
 
 
