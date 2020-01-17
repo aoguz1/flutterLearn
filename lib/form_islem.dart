@@ -12,10 +12,9 @@ class _FormIslemState extends State<FormIslem> {
   int sayi2 = 0;
   int toplam = 0;
   int maxLines = 1;
-  TextEditingController controller1;
+  TextEditingController controller1;  // controller tanımlıyoruz  // controller inputlardan veriler almak veya işlem yapmak için kullanılır. Fakat birden fazla widgetten veri almak için kullanışlı bir yapıya sahip değildir. Controller ile veri almak istediğimizde her inputa controller tanımlamamız gerekiyordu. 
 
-  FocusNode
-      _fnode; // focus olma durumunu tetikleyeceğimiz ve focus olma durumunu yönlendirebileceğimiz değişken
+  FocusNode _fnode; // focus olma durumunu tetikleyeceğimiz ve focus olma durumunu yönlendirebileceğimiz değişken
 
   @override
   void initState() {
@@ -59,6 +58,7 @@ class _FormIslemState extends State<FormIslem> {
               width: 30,
               height: 30,
              child:  FloatingActionButton(
+               heroTag: "aa",
           onPressed: () {
           controller1.text="en üste floatingActionButtonaBasildi";
           },
@@ -71,6 +71,7 @@ class _FormIslemState extends State<FormIslem> {
 
 
              FloatingActionButton(
+               heroTag: "bb",
           onPressed: () {
             debugPrint(controller1.text);
           },
@@ -81,20 +82,15 @@ class _FormIslemState extends State<FormIslem> {
           SizedBox(height: 10,),
 
             FloatingActionButton(
+              heroTag: "cc",
           onPressed: () {
             FocusScope.of(context).requestFocus(_fnode);
           },
 
           child: Icon(Icons.add),
         ),
-
-
-
           ],
         ),
-
-          
-
 
         body: ListView(
           children: <Widget>[
