@@ -90,5 +90,63 @@ ListeDetay(this.indexDegeri);
 
 ```
 
+## Form İşlemleri 
 
 
+> Oluşturduğumuz sayfalarda form işlemlerini koyacağımız inputlarla verileri alabiliriz.
+
+
+### **Form İşlemleri ile ilgili widgetler**
+
+#### TextField ve TextFormField 
+
+- TextField sayfada bir input oluşturup kullanıcının buraya veri girmesini sağlar.
+
+- TextFromField widgeti de aynı görevi yapar ama **validate** ve **onSaved** özellikleri ile veri kontrolü ve yönlendirmeleri yapabiliriz.
+  
+- TextFromField , TextField'ın özelliklerini kapsar ve genellikle TextFormField kullanılır.
+  
+
+
+```dart
+
+
+TextField(
+                autofocus: false,
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.done,
+                maxLines: 1, // satır yüksekliğini temsil eder
+                maxLength: 7, // max girilecek değeri gösterir
+                onSubmitted: (String s) {
+                  debugPrint(s);
+                  geleninputdeger = s;
+                },
+
+                decoration: InputDecoration(
+                  hintText:
+                      "Girmek istediğiniz metni yazınız", // inputa bilgilendirici bir metin yazar.
+                  labelText:
+                      "Başlık", // inputa tıklanmadan önce bilgilendirici bir metin yazar.
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(
+                          8))), // girilmek istenen inputun çerçevesine border koyarak daha etkileşimli bir hale getirir.
+                  fillColor: Colors.orange
+                      .shade50, // eğer filled true ise buraya yazılan rengi inputun içinde uygular
+                  filled: true,
+                  icon: Icon(Icons.adb), // inputun soluna icon ekler
+                  prefixIcon:
+                      Icon(Icons.add_box), //input içinde sol tarafa icon ekler
+                  suffixIcon: Icon(
+                      Icons.add_location), //input içinde sağ tarafa icon ekler
+                ),
+              ),
+```
+
+
+#### SizeBox
+
+- iki nesne ara$$sına genişliğini ve yüksekliğini verebildiğimiz bir kutu ekleyip nesneler arasındaki mesafeyi ayarlayabiliriz.
+
+```dart
+SizedBox(height: 10),
+```

@@ -78,13 +78,16 @@ class _TextFormFieldOrnekState extends State<TextFormFieldOrnek> {
                         border: OutlineInputBorder(
                           borderSide: BorderSide(),
                         )),
-                        validator: (String girilenVeri){
+                        validator: (String girilenVeri){  // burada girilen inputa göre inputun içindeki değeri değerlendirmeler yapabiliyoruz.
                             if (girilenVeri.length <6) {
                               return "En az 6 karakter yeterli";
                             }
+                            else {
+                              return null;
+                            }
 
                         },
-                          onSaved: (sifreVeri)=> _sifre =sifreVeri,
+                          onSaved: (sifreVeri)=> _sifre =sifreVeri,  // FormState içinde tanımladığığımız değişkenlere inputun içindeki değişkenleri atıyoruz.
                   ),
                   RaisedButton.icon(
                     icon: Icon(
@@ -96,14 +99,14 @@ class _TextFormFieldOrnekState extends State<TextFormFieldOrnek> {
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      if (formKey.currentState.validate()) {
-                        formKey.currentState.save();
-                        debugPrint("Email $_email , Ad Soyad : $_adSoyad , Şifre : $_sifre");
+                      if (formKey.currentState.validate()) {  // formkey içindeki değerler validate olduğunda içeri girer
+                        formKey.currentState.save();          // key içine tanımlanan değerleri kaydeder. 
+                        debugPrint("Email $_email , Ad Soyad : $_adSoyad , Şifre : $_sifre"); // ekrana aldığımız değerleri basıyoruz.
                       }
                       else{
 
                         setState(() {
-                          otoValidate =true;
+                          otoValidate =true; 
                         });
                         
                       }
@@ -121,20 +124,20 @@ class _TextFormFieldOrnekState extends State<TextFormFieldOrnek> {
     Pattern pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regex = new RegExp(pattern);
-      if (!regex.hasMatch(email)) {
+      if (!regex.hasMatch(email)) {   //regex içinde olan değerler olmadığında içeri girip ifadeyi return olarak döndürür.
         return "Geçersiz e-mail";
       }
       else {
         return null;
       }
 
-  }
+  }                      
 
 
   String _isimKontrol(String isim) {
       RegExp regex=RegExp("^[a-zA-Z]+\$");
 
-      if (!regex.hasMatch(isim)) { 
+      if (!regex.hasMatch(isim)) {   // regex içinde olan değerler olmadığında içeri girip ifadeyi return olarak döndürür.
         return "İsim Numara İçermemeli";
       }
       else return null;
