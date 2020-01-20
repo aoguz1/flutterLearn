@@ -43,9 +43,6 @@ main(List<String> args) {
       } else {
         debugPrint("Herhangi bir sayfa ile ilişkilendirilemedi");
       }
-
-
-      
     },
     onUnknownRoute: (RouteSettings settings) =>
         MaterialPageRoute(builder: (context) => HataSayfasi()),
