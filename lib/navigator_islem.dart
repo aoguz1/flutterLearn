@@ -97,6 +97,15 @@ class NavigasyonIslemleri extends StatelessWidget {
               Navigator.pushNamed(context, "/ListeSayfasi"),
             },
           ),
+
+           RaisedButton(
+            child: Text("Diger form elemanlari"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/DigerFromEleman"),
+            },
+          ),
+
          
         ])));
   }

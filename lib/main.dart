@@ -1,8 +1,11 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
 import 'package:listeler2/navigator_islem.dart';
 import 'package:listeler2/textform_fieldOrnek.dart';
 import 'custom_scrolls_sliver.dart';
+import 'diger_formElemanlari.dart';
 import 'form_islem.dart';
 import 'listeler.dart';
 import 'gridView.dart';
@@ -16,7 +19,7 @@ main(List<String> args) {
     // tanumlaması : "/CPage/GPage/FPage" : (context)=> FSayfasi(),
     //-----
 
-    initialRoute: '/textfieldIslem',
+    initialRoute: '/DigerFromEleman',
 
     routes: {
       // route işlemleri ile string karakterlere atadığımız değerleri sayflar arası geçişlerde kullanabiliriz.
@@ -32,6 +35,7 @@ main(List<String> args) {
       '/textfieldIslem': (context) => TextFormFieldOrnek(),
       // '/GPage' :(context)=>GSayfasi(),
       '/ListeSayfasi': (context) => ListeSinifi(),
+      '/DigerFromEleman' : (context) => DigerFormEleman(),
     },
 
     onGenerateRoute: (RouteSettings settings) {
@@ -43,8 +47,6 @@ main(List<String> args) {
       } else {
         debugPrint("Herhangi bir sayfa ile ilişkilendirilemedi");
       }
-
-      
     },
     onUnknownRoute: (RouteSettings settings) =>
         MaterialPageRoute(builder: (context) => HataSayfasi()),
