@@ -106,6 +106,14 @@ class NavigasyonIslemleri extends StatelessWidget {
             },
           ),
 
+          RaisedButton(
+            child: Text("Tarih saat işlemlerine git"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/TarihSaat"),
+            },
+          ),
+
          
         ])));
   }

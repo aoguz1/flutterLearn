@@ -1,8 +1,8 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
 import 'package:listeler2/navigator_islem.dart';
+import 'package:listeler2/tarihSaat.dart';
 import 'package:listeler2/textform_fieldOrnek.dart';
 import 'custom_scrolls_sliver.dart';
 import 'diger_formElemanlari.dart';
@@ -19,7 +19,7 @@ main(List<String> args) {
     // tanumlaması : "/CPage/GPage/FPage" : (context)=> FSayfasi(),
     //-----
 
-    initialRoute: '/DigerFromEleman',
+    initialRoute: '/TarihSaat',
 
     routes: {
       // route işlemleri ile string karakterlere atadığımız değerleri sayflar arası geçişlerde kullanabiliriz.
@@ -36,6 +36,7 @@ main(List<String> args) {
       // '/GPage' :(context)=>GSayfasi(),
       '/ListeSayfasi': (context) => ListeSinifi(),
       '/DigerFromEleman' : (context) => DigerFormEleman(),
+      '/TarihSaat' : (context) => TarihSaatOrnek(),
     },
 
     onGenerateRoute: (RouteSettings settings) {
