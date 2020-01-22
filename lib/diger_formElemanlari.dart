@@ -15,6 +15,8 @@ class _DigerFormElemanState extends State<DigerFormEleman> {
   double sliderValue = 10.0;
   String secilenRenk = "Kırmızı";
   List<String> sehirler = ["Kırklareli", "Edirne", "Bursa", "Çanakkale"];
+  List<String> pdilleri= ["Dart","Swift","Kotlin","JavaScript","Python"];
+  String secilendil ="Dart";
   String secilensehir = "Kırklareli";
 
   @override
@@ -185,11 +187,33 @@ class _DigerFormElemanState extends State<DigerFormEleman> {
                 }).toList(),
                 onChanged: (gelensehir) {
                   setState(() {
-                    secilensehir = gelensehir;
+                    secilensehir = gelensehir;   // secilensehir degeri üst tarafta listelerden belirlediğimiz bir elemanı içermeli yoksa hata verir.
                   });
                 },
                 value: secilensehir,
-              )
+              ),
+
+              DropdownButton<String>(
+                hint: Text("Lütfen deger seciniz"),
+                items: 
+                  pdilleri.map((pNowValue){
+                    return DropdownMenuItem<String>(
+                          child: Text(pNowValue),
+                          value: pNowValue,
+                    );
+                  }).toList(),
+                  onChanged: (pdildeger){
+                    setState(() {
+                      secilendil = pdildeger;
+                    });
+                    
+                  },
+                 
+                value: secilendil,
+              ),
+
+
+
             ],
           ),
         ));
