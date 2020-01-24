@@ -114,6 +114,15 @@ class NavigasyonIslemleri extends StatelessWidget {
             },
           ),
 
+
+          RaisedButton(
+            child: Text("Stepper örneğine git"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/StepperOrnek"),
+            },
+          ),
+
          
         ])));
   }
