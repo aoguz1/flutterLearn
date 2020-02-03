@@ -123,6 +123,14 @@ class NavigasyonIslemleri extends StatelessWidget {
             },
           ),
 
+           RaisedButton(
+            child: Text("Font Kullanımı"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/FontKullanimi"),
+            },
+          ),
+
          
         ])));
   }
