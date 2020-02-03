@@ -19,7 +19,7 @@ class FontKullanimi extends StatelessWidget {
                     child: Text(
                   "Font Kullanımı",
                   style: GoogleFonts.molle(  // google fonts eklentisi kullanılarak widget içinde kullandığımız text'in stlini değiştiridik
-                  
+
                     textStyle: TextStyle(
                       fontSize: 20,
                     ),
