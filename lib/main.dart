@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:listeler2/chapter_1/ui/myapp.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
+import 'package:listeler2/draver_inkwell.dart';
 import 'package:listeler2/font_kullanimi.dart';
 import 'package:listeler2/navigator_islem.dart';
 import 'package:listeler2/stepper.dart';
@@ -38,7 +39,7 @@ void main()=> runApp(Anasayfa());
     // tanumlaması : "/CPage/GPage/FPage" : (context)=> FSayfasi(),
     //-----
 
-    initialRoute: '/StepperOrnek',
+    initialRoute: '/DraverInkwell',
 
     routes: {
       // route işlemleri ile string karakterlere atadığımız değerleri sayflar arası geçişlerde kullanabiliriz.
@@ -58,6 +59,7 @@ void main()=> runApp(Anasayfa());
       '/TarihSaat': (context) => TarihSaatOrnek(),
       '/StepperOrnek': (context) => StepperO(),
       '/FontKullanimi': (context) => FontKullanimi(),
+      '/DraverInkwell' : (context) => DraverInkwell(),
     },
 
     onGenerateRoute: (RouteSettings settings) {

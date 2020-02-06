@@ -131,6 +131,14 @@ class NavigasyonIslemleri extends StatelessWidget {
             },
           ),
 
+          RaisedButton(
+            child: Text("Draver ve Inkwell kullanımı"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/DraverInkwell"),
+            },
+          ),
+
          
         ])));
   }
