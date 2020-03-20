@@ -5,12 +5,8 @@ import 'package:listeler2/custom_scrolls_sliver.dart';
 import 'package:listeler2/draver_inkwell.dart';
 import 'package:listeler2/font_kullanimi.dart';
 import 'package:listeler2/navigator_islem.dart';
-<<<<<<< HEAD
 import 'package:listeler2/rive.dart';
-=======
-import 'package:listeler2/stepper.dart';
 import 'package:listeler2/tarihSaat.dart';
->>>>>>> readme
 import 'package:listeler2/textform_fieldOrnek.dart';
 import 'custom_scrolls_sliver.dart';
 import 'diger_formElemanlari.dart';
@@ -64,7 +60,7 @@ void main()=> runApp(Anasayfa());
       '/ListeSayfasi': (context) => ListeSinifi(),
       '/DigerFromEleman': (context) => DigerFormEleman(),
       '/TarihSaat': (context) => TarihSaatOrnek(),
-      '/StepperOrnek': (context) => StepperO(),
+      '/StepperOrnek': (context) => Stepper(),
       '/FontKullanimi': (context) => FontKullanimi(),
       '/DraverInkwell' : (context) => DraverInkwell(),
     },
