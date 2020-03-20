@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:listeler2/chapter_1/ui/myapp.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
+import 'package:listeler2/draver_inkwell.dart';
+import 'package:listeler2/font_kullanimi.dart';
 import 'package:listeler2/navigator_islem.dart';
+<<<<<<< HEAD
 import 'package:listeler2/rive.dart';
+=======
+import 'package:listeler2/stepper.dart';
+import 'package:listeler2/tarihSaat.dart';
+>>>>>>> readme
 import 'package:listeler2/textform_fieldOrnek.dart';
 import 'custom_scrolls_sliver.dart';
+import 'diger_formElemanlari.dart';
 import 'form_islem.dart';
 import 'listeler.dart';
 import 'gridView.dart';
@@ -11,15 +21,31 @@ import 'etkinListeOrnek.dart';
 import 'package:rive/rive.dart';
 import 'package:flare_flutter/flare_actor.dart';
 
-main(List<String> args) {
-  runApp(MaterialApp(
+void main()=> runApp(Anasayfa());
+  
+    
+ class Anasayfa extends StatelessWidget {
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+    theme: ThemeData(
+     /*  textTheme: GoogleFonts.robotoSlabTextTheme(
+        Theme.of(context).textTheme,   
+      ------ 
+      Google Fonts eklentisi kullanılarak font dosyası indirmeden uygulamanın tüm sayfalarına buradaki theme data içinden uygulamalar yapılabilir
+
+
+      ), */
+      primaryColor: Colors.indigo,
+    ),
     title: "flutter ",
+
     // initialRoute: "/CPage", uygulama açıdığında başlayarak zincirlenmiş bir rotayı temsil eder
     //örnek  :  "/CPage/GPage/FPage" ilk fpage yi açar geri tuşuna basıldıkça arkadaki zincirdeki sayfaları çalıştırır.
     // tanumlaması : "/CPage/GPage/FPage" : (context)=> FSayfasi(),
     //-----
 
-    initialRoute: '/textfieldIslem',
+    initialRoute: '/DraverInkwell',
 
     routes: {
       // route işlemleri ile string karakterlere atadığımız değerleri sayflar arası geçişlerde kullanabiliriz.
@@ -36,6 +62,11 @@ main(List<String> args) {
       '/textfieldIslem': (context) => TextFormFieldOrnek(),
       // '/GPage' :(context)=>GSayfasi(),
       '/ListeSayfasi': (context) => ListeSinifi(),
+      '/DigerFromEleman': (context) => DigerFormEleman(),
+      '/TarihSaat': (context) => TarihSaatOrnek(),
+      '/StepperOrnek': (context) => StepperO(),
+      '/FontKullanimi': (context) => FontKullanimi(),
+      '/DraverInkwell' : (context) => DraverInkwell(),
     },
 
     onGenerateRoute: (RouteSettings settings) {
@@ -51,9 +82,11 @@ main(List<String> args) {
     onUnknownRoute: (RouteSettings settings) =>
         MaterialPageRoute(builder: (context) => HataSayfasi()),
     debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      primaryColor: Colors.indigo,
-    ),
+
     //home:NavigasyonIslemleri(),
-  ));
-}
+  ); 
+   }
+ }
+    
+    
+

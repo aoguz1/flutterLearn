@@ -24,8 +24,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   fluttertoast: ^3.1.3
+<<<<<<< HEAD
   rive: ^0.0.1
   
+=======
+  date_format: ^1.0.8
+  google_fonts: ^0.3.6
+>>>>>>> readme
 
 dev_dependencies:
   flutter_test:

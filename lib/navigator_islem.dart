@@ -104,6 +104,48 @@ class NavigasyonIslemleri extends StatelessWidget {
               Navigator.pushNamed(context, "/ListeSayfasi"),
             },
           ),
+
+           RaisedButton(
+            child: Text("Diger form elemanlari"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/DigerFromEleman"),
+            },
+          ),
+
+          RaisedButton(
+            child: Text("Tarih saat işlemlerine git"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/TarihSaat"),
+            },
+          ),
+
+
+          RaisedButton(
+            child: Text("Stepper örneğine git"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/StepperOrnek"),
+            },
+          ),
+
+           RaisedButton(
+            child: Text("Font Kullanımı"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/FontKullanimi"),
+            },
+          ),
+
+          RaisedButton(
+            child: Text("Draver ve Inkwell kullanımı"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/DraverInkwell"),
+            },
+          ),
+
          
         ])));
   }
