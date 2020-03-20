@@ -1,7 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-
 class NavigasyonIslemleri extends StatelessWidget {
   String baslik = "B Sayfası";
   @override
@@ -46,9 +43,11 @@ class NavigasyonIslemleri extends StatelessWidget {
               ),
               color: Colors.blueGrey,
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                  CSayfasi(),
-                ));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CSayfasi(),
+                    ));
               }),
           RaisedButton(
               child: Text(
@@ -69,13 +68,155 @@ class NavigasyonIslemleri extends StatelessWidget {
           RaisedButton(
             child: Text("E sayfasına git ve geri gelme"),
             onPressed: () {
-              
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (context) => ESayfasi()));
               debugPrint("e sayfası calıştı");
             },
           ),
+
+           RaisedButton(
+             color: Colors.orange,
+            child: Text("Form İşlemlerine Git"),
+            onPressed: () {
+              Navigator.pushNamed(context, "/formSayfasi");
+            },
+          ),
+          RaisedButton(
+             color: Colors.orange,
+            child: Text("Rive Denemeye Git"),
+            onPressed: () {
+              Navigator.pushNamed(context, "/riveSayfa");
+            },
+          ),
+
+
+          RaisedButton(
+             color: Colors.orange,
+            child: Text("TextField islemlerine git"),
+            onPressed: () {
+              Navigator.pushNamed(context, "/textfieldIslem");
+            },
+          ),
+          RaisedButton(
+            child: Text("Listeler Sayfasına Git"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/ListeSayfasi"),
+            },
+          ),
+
+           RaisedButton(
+            child: Text("Diger form elemanlari"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/DigerFromEleman"),
+            },
+          ),
+
+          RaisedButton(
+            child: Text("Tarih saat işlemlerine git"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/TarihSaat"),
+            },
+          ),
+
+
+          RaisedButton(
+            child: Text("Stepper örneğine git"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/StepperOrnek"),
+            },
+          ),
+
+           RaisedButton(
+            child: Text("Font Kullanımı"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/FontKullanimi"),
+            },
+          ),
+
+          RaisedButton(
+            child: Text("Draver ve Inkwell kullanımı"),
+            onPressed: () => {
+              
+              Navigator.pushNamed(context, "/DraverInkwell"),
+            },
+          ),
+
+         
         ])));
+  }
+}
+
+class ListeSinifi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Listeler Sayfası"),
+      ),
+      body: ListView.builder(
+          itemCount: 30,
+          itemBuilder: (context, int index) {
+            return GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, "/detay/$index");
+                //Navigator.push(context, MaterialPageRoute(builder: (context)=>ListeDetay(index)))
+                // on genrate route kullanmak istemeseydik bu şekilde yapacaktık.
+              },
+              child: Center(
+                child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Liste elemanı $index")),
+              ),
+            );
+          }),
+    );
+  }
+}
+
+class ListeDetay extends StatelessWidget {
+int indexDegeri=0;
+ListeDetay(this.indexDegeri);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Liste Detay Sayfası"),
+        ),
+        body:Center(child: Text("Tıklanılan index degeri $indexDegeri")),
+        
+        );
+  }
+}
+
+class HataSayfasi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Hata Sayfasi"),
+      ),
+      body: Column(
+        children: <Widget>[
+          Text(
+            "Hatalı tıklama yaptınız ana sayfaya gidiniz",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+          ),
+          RaisedButton(
+            child: Text("Ana Sayfaya Git"),
+            onPressed: () {
+              Navigator.pushNamed(context, "/");
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -103,8 +244,9 @@ class ESayfasi extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text("f sayfasına git"),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FSayfasi()));
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FSayfasi()));
                 },
               )
             ]),
@@ -186,7 +328,7 @@ class BSayfasi extends StatelessWidget {
           RaisedButton(
             child: Text("C Sayfasına git"),
             onPressed: () {
-              Navigator.pushNamed(context,"/CPage");
+              Navigator.pushNamed(context, "/CPage");
             },
           )
         ],
@@ -257,7 +399,8 @@ class FSayfasi extends StatelessWidget {
             RaisedButton(
               child: Text("G sayfasına git"),
               onPressed: () {
-                Navigator.pushNamed(context, "/GPage");
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GSayfasi()));
               },
             ),
           ],
@@ -285,8 +428,7 @@ class GSayfasi extends StatelessWidget {
             child: Text("M sayfasına git"),
             onPressed: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MSayfasi()));
+                  context, MaterialPageRoute(builder: (context) => MSayfasi()));
             },
           ),
         ],
@@ -313,8 +455,7 @@ class MSayfasi extends StatelessWidget {
             child: Text("L sayfasına git"),
             onPressed: () {
               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LSayfasi()));
+                  context, MaterialPageRoute(builder: (context) => LSayfasi()));
             },
           ),
         ],
