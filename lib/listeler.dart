@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 class Listeler extends StatelessWidget {
   List<int> ListeNumaralari = List.generate(20, (index) => index);
-  List<String> ListeAltBaslik =
-      List.generate(20, (index) => "Liste elemanı alt baslik $index");
+  List<String> ListeAltBaslik = List.generate(20, (index) => "Liste elemanı alt baslik $index");
 
   @override
   Widget build(BuildContext context) {

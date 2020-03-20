@@ -81,6 +81,13 @@ class NavigasyonIslemleri extends StatelessWidget {
               Navigator.pushNamed(context, "/formSayfasi");
             },
           ),
+          RaisedButton(
+             color: Colors.orange,
+            child: Text("Rive Denemeye Git"),
+            onPressed: () {
+              Navigator.pushNamed(context, "/riveSayfa");
+            },
+          ),
 
 
           RaisedButton(

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
 import 'package:listeler2/navigator_islem.dart';
+import 'package:listeler2/rive.dart';
 import 'package:listeler2/textform_fieldOrnek.dart';
 import 'custom_scrolls_sliver.dart';
 import 'form_islem.dart';
 import 'listeler.dart';
 import 'gridView.dart';
 import 'etkinListeOrnek.dart';
+import 'package:rive/rive.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 main(List<String> args) {
   runApp(MaterialApp(
@@ -29,6 +32,7 @@ main(List<String> args) {
       '/EPage': (context) => ESayfasi(),
       '/FPage': (context) => FSayfasi(),
       '/formSayfasi': (context) => FormIslem(),
+      '/riveSayfa' : (context) => RiveApp(),
       '/textfieldIslem': (context) => TextFormFieldOrnek(),
       // '/GPage' :(context)=>GSayfasi(),
       '/ListeSayfasi': (context) => ListeSinifi(),
