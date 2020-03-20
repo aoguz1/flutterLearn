@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-
-=======
-x# Flutter Learn 
+# Flutter Learn 
 
 ## onGenerateRoute 
 
@@ -153,4 +150,3 @@ TextField(
 ```dart
 SizedBox(height: 10),
 ```
->>>>>>> readme
