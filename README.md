@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ead31f991cbf5121c853ba58a755fe1c42af23c6
 # Flutter Learn 
 
 ## onGenerateRoute 
