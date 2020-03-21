@@ -6,6 +6,7 @@ import 'package:listeler2/draver_inkwell.dart';
 import 'package:listeler2/font_kullanimi.dart';
 import 'package:listeler2/navigator_islem.dart';
 import 'package:listeler2/rive.dart';
+import 'package:listeler2/stepper.dart';
 import 'package:listeler2/tarihSaat.dart';
 import 'package:listeler2/textform_fieldOrnek.dart';
 import 'custom_scrolls_sliver.dart';
@@ -60,7 +61,7 @@ void main()=> runApp(Anasayfa());
       '/ListeSayfasi': (context) => ListeSinifi(),
       '/DigerFromEleman': (context) => DigerFormEleman(),
       '/TarihSaat': (context) => TarihSaatOrnek(),
-      '/StepperOrnek': (context) => Stepper(),
+      '/StepperOrnek': (context) => StepperO(),
       '/FontKullanimi': (context) => FontKullanimi(),
       '/DraverInkwell' : (context) => DraverInkwell(),
     },

@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 # Flutter Learn 
-=======
-
-Flutter Learn 
->>>>>>> 985cf1373cd27f7a3bc7d2bca91418491782ddcc
 
 ## onGenerateRoute 
 
