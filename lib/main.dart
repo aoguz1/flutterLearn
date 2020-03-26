@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:listeler2/bottom_nvgtr_tabBars.dart/bottom_navigation_bar.dart';
+
 import 'package:listeler2/chapter_1/ui/myapp.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
 import 'package:listeler2/draver_inkwell.dart';
@@ -9,6 +11,7 @@ import 'package:listeler2/rive.dart';
 import 'package:listeler2/stepper.dart';
 import 'package:listeler2/tarihSaat.dart';
 import 'package:listeler2/textform_fieldOrnek.dart';
+
 import 'custom_scrolls_sliver.dart';
 import 'diger_formElemanlari.dart';
 import 'form_islem.dart';
@@ -42,7 +45,7 @@ void main()=> runApp(Anasayfa());
     // tanumlaması : "/CPage/GPage/FPage" : (context)=> FSayfasi(),
     //-----
 
-    initialRoute: '/DraverInkwell',
+    initialRoute: '/BottomNavigation',
 
     routes: {
       // route işlemleri ile string karakterlere atadığımız değerleri sayflar arası geçişlerde kullanabiliriz.
@@ -64,6 +67,7 @@ void main()=> runApp(Anasayfa());
       '/StepperOrnek': (context) => StepperO(),
       '/FontKullanimi': (context) => FontKullanimi(),
       '/DraverInkwell' : (context) => DraverInkwell(),
+      '/BottomNavigation' : (context) => BottomNvgtrBar(),
     },
 
     onGenerateRoute: (RouteSettings settings) {
@@ -82,8 +86,9 @@ void main()=> runApp(Anasayfa());
 
     //home:NavigasyonIslemleri(),
   ); 
-   }
  }
+}
+
     
     
 

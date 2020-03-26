@@ -1,153 +1,146 @@
 import 'package:flutter/material.dart';
+
 class NavigasyonIslemleri extends StatelessWidget {
   String baslik = "B Sayfası";
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Navigator app bar"),
+      appBar: AppBar(
+        title: Text("Navigator app bar"),
+      ),
+      body: Center(
+        child: ListView(
+          children: <Widget>[
+            RaisedButton(
+                child: Text(
+                  "A Sayfasına Gitxs",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                color: Colors.green,
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ASayfasi()));
+                }),
+            RaisedButton(
+                child: Text(
+                  "B Sayfasına Git ve Veri Gönder",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                color: Colors.indigo,
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BSayfasi()));
+                }),
+            RaisedButton(
+                child: Text(
+                  "Geri donus Sayfasına Git",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                color: Colors.blueGrey,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CSayfasi(),
+                      ));
+                }),
+            RaisedButton(
+                child: Text(
+                  "D Sayfasına git ve geri gelirken veri getir",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                color: Colors.blueGrey,
+                onPressed: () {
+                  Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => DSayfasi()))
+                      .then((popOlayindanSonraGelenDeger) {
+                    debugPrint(
+                        "pop isleminden sonra gelen deger $popOlayindanSonraGelenDeger");
+                  });
+                }),
+            RaisedButton(
+              child: Text("E sayfasına git ve geri gelme"),
+              onPressed: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => ESayfasi()));
+                debugPrint("e sayfası calıştı");
+              },
+            ),
+            RaisedButton(
+              color: Colors.orange,
+              child: Text("Form İşlemlerine Git"),
+              onPressed: () {
+                Navigator.pushNamed(context, "/formSayfasi");
+              },
+            ),
+            RaisedButton(
+              color: Colors.orange,
+              child: Text("Rive Denemeye Git"),
+              onPressed: () {
+                Navigator.pushNamed(context, "/riveSayfa");
+              },
+            ),
+            RaisedButton(
+              color: Colors.orange,
+              child: Text("TextField islemlerine git"),
+              onPressed: () {
+                Navigator.pushNamed(context, "/textfieldIslem");
+              },
+            ),
+            RaisedButton(
+              child: Text("Listeler Sayfasına Git"),
+              onPressed: () => {
+                Navigator.pushNamed(context, "/ListeSayfasi"),
+              },
+            ),
+            RaisedButton(
+              child: Text("Diger form elemanlari"),
+              onPressed: () => {
+                Navigator.pushNamed(context, "/DigerFromEleman"),
+              },
+            ),
+            RaisedButton(
+              child: Text("Tarih saat işlemlerine git"),
+              onPressed: () => {
+                Navigator.pushNamed(context, "/TarihSaat"),
+              },
+            ),
+            RaisedButton(
+              child: Text("Stepper örneğine git"),
+              onPressed: () => {
+                Navigator.pushNamed(context, "/StepperOrnek"),
+              },
+            ),
+            RaisedButton(
+              child: Text("Font Kullanımı"),
+              onPressed: () => {
+                Navigator.pushNamed(context, "/FontKullanimi"),
+              },
+            ),
+            RaisedButton(
+              child: Text("Draver ve Inkwell kullanımı"),
+              onPressed: () => {
+                Navigator.pushNamed(context, "/DraverInkwell"),
+              },
+            ),
+            RaisedButton(
+              onPressed: () =>
+                  {Navigator.pushNamed(context, "/BottomNavigation")},
+              child: Text("Bottom Navigator Örneğine Git"),
+            ),
+          ],
         ),
-        body: Center(
-            child: Column(children: <Widget>[
-          RaisedButton(
-              child: Text(
-                "A Sayfasına Gitxs",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              color: Colors.green,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ASayfasi()));
-              }),
-          RaisedButton(
-              child: Text(
-                "B Sayfasına Git ve Veri Gönder",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              color: Colors.indigo,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BSayfasi()));
-              }),
-          RaisedButton(
-              child: Text(
-                "Geri donus Sayfasına Git",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              color: Colors.blueGrey,
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CSayfasi(),
-                    ));
-              }),
-          RaisedButton(
-              child: Text(
-                "D Sayfasına git ve geri gelirken veri getir",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              color: Colors.blueGrey,
-              onPressed: () {
-                Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => DSayfasi()))
-                    .then((popOlayindanSonraGelenDeger) {
-                  debugPrint(
-                      "pop isleminden sonra gelen deger $popOlayindanSonraGelenDeger");
-                });
-              }),
-          RaisedButton(
-            child: Text("E sayfasına git ve geri gelme"),
-            onPressed: () {
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => ESayfasi()));
-              debugPrint("e sayfası calıştı");
-            },
-          ),
-
-           RaisedButton(
-             color: Colors.orange,
-            child: Text("Form İşlemlerine Git"),
-            onPressed: () {
-              Navigator.pushNamed(context, "/formSayfasi");
-            },
-          ),
-          RaisedButton(
-             color: Colors.orange,
-            child: Text("Rive Denemeye Git"),
-            onPressed: () {
-              Navigator.pushNamed(context, "/riveSayfa");
-            },
-          ),
-
-
-          RaisedButton(
-             color: Colors.orange,
-            child: Text("TextField islemlerine git"),
-            onPressed: () {
-              Navigator.pushNamed(context, "/textfieldIslem");
-            },
-          ),
-          RaisedButton(
-            child: Text("Listeler Sayfasına Git"),
-            onPressed: () => {
-              
-              Navigator.pushNamed(context, "/ListeSayfasi"),
-            },
-          ),
-
-           RaisedButton(
-            child: Text("Diger form elemanlari"),
-            onPressed: () => {
-              
-              Navigator.pushNamed(context, "/DigerFromEleman"),
-            },
-          ),
-
-          RaisedButton(
-            child: Text("Tarih saat işlemlerine git"),
-            onPressed: () => {
-              
-              Navigator.pushNamed(context, "/TarihSaat"),
-            },
-          ),
-
-
-          RaisedButton(
-            child: Text("Stepper örneğine git"),
-            onPressed: () => {
-              
-              Navigator.pushNamed(context, "/StepperOrnek"),
-            },
-          ),
-
-           RaisedButton(
-            child: Text("Font Kullanımı"),
-            onPressed: () => {
-              
-              Navigator.pushNamed(context, "/FontKullanimi"),
-            },
-          ),
-
-          RaisedButton(
-            child: Text("Draver ve Inkwell kullanımı"),
-            onPressed: () => {
-              
-              Navigator.pushNamed(context, "/DraverInkwell"),
-            },
-          ),
-
-         
-        ])));
+      ),
+    );
   }
 }
 
@@ -162,7 +155,7 @@ class ListeSinifi extends StatelessWidget {
           itemCount: 30,
           itemBuilder: (context, int index) {
             return GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pushNamed(context, "/detay/$index");
                 //Navigator.push(context, MaterialPageRoute(builder: (context)=>ListeDetay(index)))
                 // on genrate route kullanmak istemeseydik bu şekilde yapacaktık.
@@ -179,18 +172,17 @@ class ListeSinifi extends StatelessWidget {
 }
 
 class ListeDetay extends StatelessWidget {
-int indexDegeri=0;
-ListeDetay(this.indexDegeri);
+  int indexDegeri = 0;
+  ListeDetay(this.indexDegeri);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Liste Detay Sayfası"),
-        ),
-        body:Center(child: Text("Tıklanılan index degeri $indexDegeri")),
-        
-        );
+      appBar: AppBar(
+        title: Text("Liste Detay Sayfası"),
+      ),
+      body: Center(child: Text("Tıklanılan index degeri $indexDegeri")),
+    );
   }
 }
 
