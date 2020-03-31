@@ -24,10 +24,12 @@ class _TabBarOrnekState extends State<TabBarOrnek>
       child: Scaffold(
         appBar: AppBar(
           bottom: tabBarim(),
+
+           
           title: Text("Tabbar Kulanımı"),
         ),
         bottomNavigationBar: tabBottomBarim(),
-        body: TabBarView(
+        body: TabBarView(         //oluşturulan tabbar ın içeriğini burada dolduruyoruz. 
           controller: tabController, // yukarıda oluşturduğumuz controllerleri her widget'e tanımlayıp tablar ile tıklanıldığında erişilecek sayfa arasında bağlantı kurduk.
           children: <Widget>[
             Container(

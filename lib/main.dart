@@ -6,6 +6,7 @@ import 'package:listeler2/chapter_1/ui/myapp.dart';
 import 'package:listeler2/custom_scrolls_sliver.dart';
 import 'package:listeler2/draver_inkwell.dart';
 import 'package:listeler2/font_kullanimi.dart';
+import 'package:listeler2/hero_Kullanimi/sayfa1.dart';
 import 'package:listeler2/navigator_islem.dart';
 import 'package:listeler2/rive.dart';
 import 'package:listeler2/stepper.dart';
@@ -45,7 +46,7 @@ void main()=> runApp(Anasayfa());
     // tanumlaması : "/CPage/GPage/FPage" : (context)=> FSayfasi(),
     //-----
 
-    initialRoute: '/BottomNavigation',
+    initialRoute: '/HeroKullanimi',
 
     routes: {
       // route işlemleri ile string karakterlere atadığımız değerleri sayflar arası geçişlerde kullanabiliriz.
@@ -68,6 +69,7 @@ void main()=> runApp(Anasayfa());
       '/FontKullanimi': (context) => FontKullanimi(),
       '/DraverInkwell' : (context) => DraverInkwell(),
       '/BottomNavigation' : (context) => BottomNvgtrBar(),
+      '/HeroKullanimi' :(context) => Sayfa1(),
     },
 
     onGenerateRoute: (RouteSettings settings) {

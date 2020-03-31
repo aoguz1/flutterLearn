@@ -137,6 +137,12 @@ class NavigasyonIslemleri extends StatelessWidget {
                   {Navigator.pushNamed(context, "/BottomNavigation")},
               child: Text("Bottom Navigator Örneğine Git"),
             ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/HeroKullanimi");
+              },
+              child: Text("Hero kullanımı"),
+            )
           ],
         ),
       ),
